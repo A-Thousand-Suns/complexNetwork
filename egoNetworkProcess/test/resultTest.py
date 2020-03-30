@@ -3,7 +3,7 @@ import threading
 
 class test:
     def __init__(self, networkPath, modulePath, resultPath, storePath):
-        self.networkkPath = networkPath
+        self.networkPath = networkPath
         self.modulePath = modulePath
         self.resultPath = resultPath
         self.storePath = storePath
@@ -28,7 +28,7 @@ class test:
     def getAnswerDic(self):
         answerDic = {}
         moduleDic = self.readModuleFile()
-        G = nx.read_edgelist(self.networkkPath)
+        G = nx.read_edgelist(self.networkPath)
 
         for i in G.nodes:
             G.nodes[i]['moduleId'] = moduleDic[i]
@@ -38,9 +38,9 @@ class test:
             answerDic[i] = neighbors
 
             for j in neighbors:
-                if(G.nodes[j]['moduleId'] not in G.nodes[i]['moduleId']):
+                if ((set(G.nodes[j]['moduleId']) & set(G.nodes[i]['moduleId'])).__len__() == 0):
                     answerDic[i].remove(j)
-
+        print(answerDic)
         return answerDic
 
     def getResultDic(self):
@@ -50,8 +50,9 @@ class test:
 
         with open(self.resultPath, 'r') as file:
             for i in file.readlines():
-                sum = sum +1
+                sum = sum + 1
                 temStr = i.replace('\n', '')
+                temStr = temStr.strip()
                 str = temStr.split('\t')
 
                 for j in str[1].split():
@@ -61,7 +62,7 @@ class test:
 
         return resultDic
 
-    def getAccuracy(self, answerDic, resultDic):
+    def getAccuracy(self):
         answerDic = self.getAnswerDic()
         resultDic = self.getResultDic()
         answerSumForAll = 0
