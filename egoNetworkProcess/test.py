@@ -127,7 +127,19 @@ def getPathTest():
     result = re.findall(pattern, path)
     print(type(result))
 
+def readComFileTest():
+    path = r'E:\benchmark\benchmark\benchmark\Debug\community.dat'
+    list =[]
+    with open(path, 'r', encoding='utf-8') as file:
+        for i in file.readlines():
+            str = i.replace('\n', '')
+            str = str.strip()
+            str = str.split('\t')
+            for i in str[1].split(' '):
+                list.append(i)
+            print(str[0], list)
+            list = []
+
 if __name__ == '__main__':
-    getPathTest()
-    print('')
+    readComFileTest()
 

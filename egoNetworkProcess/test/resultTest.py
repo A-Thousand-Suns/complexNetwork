@@ -5,20 +5,24 @@ class test:
     def __init__(self, networkPath, modulePath, resultPath, storePath):
         self.networkkPath = networkPath
         self.modulePath = modulePath
-        self.resulePatn = resultPath
+        self.resultPath = resultPath
         self.storePath = storePath
 
     def readModuleFile(self):
         moduleDic = {}
-
+        moduleId = []
         with open(self.modulePath, 'r') as file:
             for i in file.readlines():
                 temStr = i.replace('\n', '')
+                temStr = temStr.strip()
                 str = temStr.split('\t')
                 nodeId = str[0]
-                moduleId = str[1]
+                for j in str[1].split(' '):
+                    moduleId.append(j)
                 moduleDic[nodeId] = moduleId
+                moduleId = []
 
+        print(moduleDic)
         return moduleDic
 
     def getAnswerDic(self):
@@ -44,7 +48,7 @@ class test:
         resultDic = {}
         neighborList = []
 
-        with open(self.resulePatn, 'r') as file:
+        with open(self.resultPath, 'r') as file:
             for i in file.readlines():
                 sum = sum +1
                 temStr = i.replace('\n', '')
@@ -107,5 +111,8 @@ class test:
         tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(tGetAnswerDic.run(), tGetResultDic.run(),))
         tGetAccuracy.run()
 
+if __name__ == '__main__':
+    c = test('', r'E:\benchmark\benchmark\benchmark\Debug\community.dat', '', '')
+    c.readModuleFile()
 
 
