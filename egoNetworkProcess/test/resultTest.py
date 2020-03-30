@@ -112,8 +112,6 @@ class test:
         tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(tGetAnswerDic.run(), tGetResultDic.run(),))
         tGetAccuracy.run()
 
-if __name__ == '__main__':
-    c = test('', r'E:\benchmark\benchmark\benchmark\Debug\community.dat', '', '')
-    c.readModuleFile()
+
 
 
