@@ -26,7 +26,7 @@ class test:
         return moduleDic
 
     def getAnswerDic(self):
-        answerDit = {}
+        answerDic = {}
         moduleDic = self.readModuleFile()
         G = nx.read_edgelist(self.networkkPath)
 
@@ -35,13 +35,13 @@ class test:
 
         for i in G.nodes:
             neighbors = list(G.neighbors(i))
-            answerDit[i] = neighbors
+            answerDic[i] = neighbors
 
             for j in neighbors:
-                if(G.nodes[j]['moduleId'] != G.nodes[i]['moduleId']):
-                    answerDit[i].remove(j)
+                if(G.nodes[j]['moduleId'] not in G.nodes[i]['moduleId']):
+                    answerDic[i].remove(j)
 
-        return answerDit
+        return answerDic
 
     def getResultDic(self):
         sum = 0
