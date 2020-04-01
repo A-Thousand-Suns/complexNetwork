@@ -144,6 +144,8 @@ def listEqualTest():
     listA = [1, 2, 3]
     listB = [2, 3, 4]
     print((set(listA) & set(listB)).__len__())
+
+
 if __name__ == '__main__':
     listEqualTest()
 

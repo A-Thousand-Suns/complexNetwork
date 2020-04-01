@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/process" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/sampleNetwork" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/testResult" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/processResult" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
