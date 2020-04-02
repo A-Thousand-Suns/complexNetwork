@@ -23,7 +23,6 @@ class test:
                 moduleDic[nodeId] = moduleId
                 moduleId = []
 
-        print(moduleDic)
         return moduleDic
 
     def getAnswerDic(self):
