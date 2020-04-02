@@ -14,3 +14,14 @@ if __name__ == '__main__':
         t = threading.Thread(target=testFunc, args=(samplePath+i+r'\network.dat', samplePath+i+'\community.dat',
                                                     resultPath+i+'.dat', storePath+i+'.dat'))
         t.run()
+
+    for i in fileList:
+        with open(storePath+i+r'.dat', 'r+') as file:
+            old = file.read()
+            configFile = open(samplePath+i+r'\config.dat', 'r')
+            configContent = configFile.read()
+            file.seek(0)
+            file.write(configContent + '\n')
+            file.write('\n')
+            file.write(old)
+            configFile.close()

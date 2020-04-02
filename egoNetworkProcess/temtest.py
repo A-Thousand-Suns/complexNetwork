@@ -178,7 +178,13 @@ def readResultTest():
             neighborList = []
         print(resultDic)
 
+def dicRemoveTest():
+    a = {1:[2, 3, 4]}
+    for i in a:
+        print(i)
+
+
 if __name__ == '__main__':
-    readResultTest()
+    dicRemoveTest()
     pass
 

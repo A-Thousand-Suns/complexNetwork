@@ -9,6 +9,11 @@ class test:
         self.resultPath = resultPath
         self.storePath = storePath
 
+    '''
+        Read the community.dat file, generate a moduleDic dictionary, 
+        the key value is the node name, 
+        and the attribute value is the communityID where the node is located
+    '''
     def readModuleFile(self):
         moduleDic = {}
         moduleId = []
@@ -18,8 +23,10 @@ class test:
                 temStr = temStr.strip()
                 str = temStr.split('\t')
                 nodeId = str[0]
+
                 for j in str[1].split(' '):
                     moduleId.append(j)
+
                 moduleDic[nodeId] = moduleId
                 moduleId = []
 
@@ -44,19 +51,16 @@ class test:
         return answerDic
 
     def getResultDic(self):
-        sum = 0
         resultDic = {}
         neighborList = []
 
         with open(self.resultPath, 'r') as file:
             for i in file.readlines():
-                sum = sum + 1
                 temStr = i.replace('\n', '')
                 temStr = temStr.strip()
                 str = temStr.split('\t')
 
                 if (str.__len__() == 1):
-                    print(temStr)
                     resultDic[temStr] = neighborList
                     neighborList = []
                     continue
@@ -115,6 +119,7 @@ class test:
     def run(self):
         tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(self.getAnswerDic(), self.getResultDic(),))
         tGetAccuracy.run()
+
 
 
 
