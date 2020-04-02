@@ -2,7 +2,6 @@ import threading
 
 import networkx as nx
 
-
 class test:
     def __init__(self, networkPath, modulePath, resultPath, storePath):
         self.networkPath = networkPath
@@ -57,6 +56,12 @@ class test:
                 temStr = temStr.strip()
                 str = temStr.split('\t')
 
+                if (str.__len__() == 1):
+                    print(temStr)
+                    resultDic[temStr] = neighborList
+                    neighborList = []
+                    continue
+
                 for j in str[1].split():
                     neighborList.append(j)
                 resultDic[str[0]] = neighborList
@@ -64,9 +69,9 @@ class test:
 
         return resultDic
 
-    def getAccuracy(self):
-        answerDic = self.getAnswerDic()
-        resultDic = self.getResultDic()
+    def getAccuracy(self, answerDic1, resultDic1):
+        answerDic = answerDic1
+        resultDic = resultDic1
         answerSumForAll = 0
         resultSumForAll = 0
         rightNumForAll = 0
@@ -109,9 +114,10 @@ class test:
             file.write(old)
 
     def run(self):
-        tGetAnswerDic = threading.Thread(target=self.getAnswerDic)
-        tGetResultDic = threading.Thread(target=self.getResultDic)
-        tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(tGetAnswerDic.run(), tGetResultDic.run(),))
+        # tGetAnswerDic = threading.Thread(target=self.getAnswerDic)
+        # tGetResultDic = threading.Thread(target=self.getResultDic)
+
+        tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(self.getAnswerDic(), self.getResultDic(),))
         tGetAccuracy.run()
 
 

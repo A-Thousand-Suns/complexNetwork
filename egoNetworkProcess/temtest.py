@@ -146,6 +146,39 @@ def listEqualTest():
     print((set(listA) & set(listB)).__len__())
 
 
+def fileOpenTest():
+    path = r'E:\编程文件\python\complexNetwork\egoNetworkProcess\sampleNetwork\network_1\community.dat'
+    with open(path, 'r') as file:
+        for i in file.readlines():
+            print(i)
+
+def readResultTest():
+    neighborList = []
+    resultDic = {}
+    resultPath = r'E:\编程文件\python\complexNetwork\egoNetworkProcess\processResult\network_1.dat'
+    with open(resultPath, 'r') as file:
+        for i in file.readlines():
+            temStr = i.replace('\n', '')
+            temStr = temStr.strip()
+            str = temStr.split('\t')
+            print(str)
+            print(str.__len__() == 1)
+            if (str.__len__() == 1):
+                print(temStr)
+                resultDic[temStr] = neighborList
+                neighborList = []
+                continue
+
+
+
+            for j in str[1].split():
+                neighborList.append(j)
+
+            resultDic[str[0]] = neighborList
+            neighborList = []
+        print(resultDic)
+
 if __name__ == '__main__':
-    listEqualTest()
+    readResultTest()
+    pass
 
