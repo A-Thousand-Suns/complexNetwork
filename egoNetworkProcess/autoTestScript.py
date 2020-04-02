@@ -22,6 +22,6 @@ if __name__ == '__main__':
             configContent = configFile.read()
             file.seek(0)
             file.write(configContent + '\n')
-            file.write('\n')
+            #file.write('\n')
             file.write(old)
             configFile.close()
