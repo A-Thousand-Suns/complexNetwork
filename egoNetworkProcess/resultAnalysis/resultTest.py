@@ -114,9 +114,6 @@ class test:
             file.write(old)
 
     def run(self):
-        # tGetAnswerDic = threading.Thread(target=self.getAnswerDic)
-        # tGetResultDic = threading.Thread(target=self.getResultDic)
-
         tGetAccuracy = threading.Thread(target=self.getAccuracy, args=(self.getAnswerDic(), self.getResultDic(),))
         tGetAccuracy.run()
 
