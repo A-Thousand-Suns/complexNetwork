@@ -1,5 +1,7 @@
-import networkx as nx
 import threading
+
+import networkx as nx
+
 
 class test:
     def __init__(self, networkPath, modulePath, resultPath, storePath):

@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/process" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/resultAnalysis" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/sampleNetwork" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/testResult" isTestSource="false" />
