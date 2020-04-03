@@ -8,8 +8,12 @@
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/sampleNetwork" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/testResult" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/processResult" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/egoNetworkProcess/visualization" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (complexNetwork)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="renderExternalDocumentation" value="true" />
   </component>
 </module>
