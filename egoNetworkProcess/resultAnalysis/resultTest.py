@@ -112,7 +112,8 @@ class test:
         with open(self.storePath, 'r+') as file:
             old =file.read()
             file.seek(0)
-            file.write('P:' + str(accuracyPAll) + '\t' + 'R:' + str(accuracyRAll) + '\n')
+            file.write('P' + '\t' + 'R' + '\n')
+            file.write(str(accuracyPAll) + '\t' + str(accuracyRAll) + '\n')
             file.write('----------------------------\n')
             file.write(old)
 

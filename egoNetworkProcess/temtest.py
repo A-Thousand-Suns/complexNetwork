@@ -185,6 +185,6 @@ def dicRemoveTest():
 
 
 if __name__ == '__main__':
-    dicRemoveTest()
+    readResultTest()
     pass
 
