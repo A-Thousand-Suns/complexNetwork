@@ -21,7 +21,7 @@ def importData():
 
                 flag = flag + 1
 
-
+        print(lable)
         print(temData)
 
 if __name__ =='__main__':
